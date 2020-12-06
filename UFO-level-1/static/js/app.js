@@ -30,3 +30,30 @@ tableData.forEach((ufo) => {
     });
   });
 
+// Get a reference to the 'Filter Table' botton
+var filterBotton = d3.select("#filter-btn");
+
+// Use d3 `.on` to attach a click handler
+filterBotton.on("click", function() {
+
+    tbody.html("");
+
+    // Reference to the 'Enter a Date' input element
+    var myInputElement = d3.select("#datetime");
+    // Get the value property of the input data
+    var myInputValue = myInputElement.property("value");
+    console.log(myInputValue);
+
+    // Filter Table with datetime value
+    var filterData = tableData.filter(ufoFilter=>ufoFilter.datetime === myInputValue);
+    console.log(filterData);
+
+    // Use Arrow Functions for filtered data set
+    filterData.forEach((dataSet) => {
+        var row = tbody.append("tr");
+        Object.entries(dataSet).forEach(([key, value]) => {
+        var cell = row.append("td");
+        cell.text(value);
+        });
+    });
+});
