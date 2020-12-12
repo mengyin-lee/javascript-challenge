@@ -5,6 +5,7 @@ console.log(tableData);
 // Get a reference to the table body
 var tbody = d3.select("tbody");
 
+
 // // **loop thru tableData for UFO Sightings data value**//
 // tableData.forEach(function(ufo){
 

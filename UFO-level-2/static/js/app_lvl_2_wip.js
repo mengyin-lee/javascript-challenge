@@ -2,6 +2,7 @@
 var tableData = data;
 console.log(tableData);
 
+
 // Get a reference to the table body
 var tbody = d3.select("tbody");
 
@@ -30,31 +31,27 @@ tableData.forEach((ufo) => {
     });
   });
 
-// Get a reference to the 'Filter Table' botton
+  //comment out
+// // Get a reference to the 'Filter Table' botton
 var filterBotton = d3.select("#filter-btn");
 
-// Use d3 `.on` to attach a click handler
-filterBotton.on("click", function() {
+// Select the form
+var form = d3.select("form");
+
+// Create event handlers
+filterBotton.on("click", runSelect);
+
+form.on("submit", runSelect);
+
+d3.selectAll("#dataselect").on("change", runSelect);
+
+function runSelect() {
+  // Use D3 to select the dropdown menu
+  var dropdownMenu = d3.select("#dataselect");
+  // Assign the value of the dropdown menu option to a variable
+  var dataset = dropdownMenu.property("value");
 
     tbody.html("");
-
-    // Reference to the 'Enter a Date' input element
-    var inputDatetime = d3.select("#datetime");
-    var inputCity = d3.select("#city");
-    // Get the value property of the input data
-    var datetimeValue = inputDatetime.property("value");
-    var cityValue = inputCity.property("value");
-
-    console.log(datetimeValue);
-
-    // Filter Table with datetime value
-    var filterData = tableData.filter(ufoFilter=>ufoFilter.datetime === datetimeValue||
-                                                 ufoFilter.city === cityValue);
-                                                //   ||
-                                                //  ufoFilter.state === myInputValue ||
-                                                //  ufoFilter.country === myInputValue ||
-                                                //  ufoFilter.shape === myInputValue);
-    console.log(filterData);
 
     // Use Arrow Functions for filtered data set
     filterData.forEach((dataSet) => {
@@ -64,4 +61,5 @@ filterBotton.on("click", function() {
         cell.text(value);
         });
     });
-});
+};
+
