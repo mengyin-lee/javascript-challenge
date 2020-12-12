@@ -3,6 +3,7 @@
 ### This homework uses starter code provided in the instruction
 
 ### * *UFO level-1*
+![image](https://user-images.githubusercontent.com/66211603/101998699-3fa04e80-3c9b-11eb-865e-c29966c5d497.png)
 1. Table renders to the 'UFO Level-1' webpage, including all columns
 2. Event handler calls a function to filter the data based on input value and prevent the page from reloading using D3
 
