@@ -34,6 +34,12 @@ tableData.forEach((ufo) => {
 // Get a reference to the 'Filter Table' botton
 var filterBotton = d3.select("#filter-btn");
 
+// // Select the form
+// var form = d3.select("form");
+
+// // Create event handlers
+// filterBotton.on("click", runSelect);
+// form.on("submit", runSelect);
 
 // Use d3 `.on` to attach a click handler
 filterBotton.on("click", function() {
@@ -58,7 +64,7 @@ filterBotton.on("click", function() {
     var countryValue = inputCountry.property("value").trim().toLowerCase();
     var shapeValue = inputShape.property("value").trim().toLowerCase();
 
-    // Set filteredData first as full set of tableData
+    // Set filteredData first as full set of TableData
     var filteredData = tableData;
 
     // Check if each input field has value
