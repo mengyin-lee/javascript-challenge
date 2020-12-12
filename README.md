@@ -8,5 +8,7 @@
 2. Event handler calls a function to filter the data based on input value and prevent the page from reloading using D3
 
 ### * *UFO Level-2*
+
+![image](https://user-images.githubusercontent.com/66211603/101998773-d66d0b00-3c9b-11eb-94ec-5238a44bb63e.png)
 1. Code is able to handle 5 total filters at once
 2. The multi-filtered data is then rendered back to the table
